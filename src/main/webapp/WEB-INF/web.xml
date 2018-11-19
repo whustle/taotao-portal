@@ -12,7 +12,17 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
+	<!-- spring容器 start -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:spring/spring-dao.xml
+		</param-value>
+	</context-param>
+	<!-- spring容器 end -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	<!-- 解决post乱码 -->
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
